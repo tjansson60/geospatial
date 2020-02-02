@@ -20,7 +20,7 @@ Invited paper, in IEEE Data Engineering Bulletin. 33, 2, 2010, pp. 32-40.
 Download the zip file to the data folder and unzip. Run the `preprocess-geolife_trajectories-data.py` script to create a
 single `data/geolife_trajectories_1_3.parquet` which is very efficent and only takes up 217 MB. 
 
-```python
+```
 lat         lon            datetime  altitude_meters              tripId
 0         39.947122  116.318730 2009-02-14 03:28:49         149.9616  20090214032849_023
 1         39.947121  116.318705 2009-02-14 03:28:54         149.6568  20090214032849_023
