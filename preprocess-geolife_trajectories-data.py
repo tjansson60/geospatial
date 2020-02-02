@@ -78,7 +78,8 @@ if __name__ == '__main__':
 
     # Save the data to parquet format
     print(f'Saving data to parquet format: {OUTPUT_FILE}')
-    # Brotli compression is a bit slower to write, but is much smaller.
+    # Brotli compression is a bit slower to write, but is much smaller. See:
+    # https://tech.jda.com/efficient-dataframe-storage-with-apache-parquet/
     # Snappy (default): 474 MB
     # Gzip: 297 MB
     # Brotli: 217 MB
