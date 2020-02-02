@@ -7,16 +7,15 @@ This GPS trajectory dataset was collected in (Microsoft Research Asia) Geolife p
 three years (from April 2007 to August 2012). Last published: August 9, 2012.
 
 Please cite the following papers when using this GPS dataset.
-[1] Yu Zheng, Lizhu Zhang, Xing Xie, Wei-Ying Ma. Mining interesting locations and travel sequences from GPS
-trajectories. In
-Proceedings of International conference on World Wild Web (WWW 2009), Madrid Spain. ACM Press: 791-800.[2] Yu Zheng,
-Quannan Li, Yukun Chen, Xing Xie, Wei-Ying Ma. Understanding Mobility Based on GPS Data. In Proceedings of
-ACM conference on Ubiquitous Computing (UbiComp 2008), Seoul, Korea. ACM Press: 312-321.
-[3] Yu Zheng, Xing Xie, Wei-Ying Ma, GeoLife: A Collaborative Social Networking Service among User, location and
-trajectory.
-Invited paper, in IEEE Data Engineering Bulletin. 33, 2, 2010, pp. 32-40.
 
-## Process dataset
+ * Yu Zheng, Lizhu Zhang, Xing Xie, Wei-Ying Ma. Mining interesting locations and travel sequences from GPS
+trajectories. In Proceedings of International conference on World Wild Web (WWW 2009), Madrid Spain. ACM Press: 791-800.
+ * Yu Zheng,Quannan Li, Yukun Chen, Xing Xie, Wei-Ying Ma. Understanding Mobility Based on GPS Data. In Proceedings of
+ACM conference on Ubiquitous Computing (UbiComp 2008), Seoul, Korea. ACM Press: 312-321.
+ * Yu Zheng, Xing Xie, Wei-Ying Ma, GeoLife: A Collaborative Social Networking Service among User, location and
+trajectory. Invited paper, in IEEE Data Engineering Bulletin. 33, 2, 2010, pp. 32-40.
+
+## Reproduce the preprocessing of the datafile to parquet format
 Download the zip file to the data folder and unzip. Run the `preprocess-geolife_trajectories-data.py` script to create a
 single `data/geolife_trajectories_1_3.parquet` which is very efficient and only takes up 217 MB.
 
