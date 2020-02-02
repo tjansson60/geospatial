@@ -26,7 +26,7 @@ def process_plt(input_tupple, verbose=False):
     Field 7: Time as a string.
     Note that field 5 and field 6&7 represent the same date/time in this dataset. You may use either of them.
     '''
-    filename, tripId = input_tupple
+    filename, tripId, userId = input_tupple
 
     df = pd.read_csv(
         filename,
@@ -43,8 +43,9 @@ def process_plt(input_tupple, verbose=False):
     # Remove unwanted columns
     df.drop(columns=['DELETE', 'DELETE2', 'date', 'time', 'altitude_feet'], inplace=True)
 
-    # Add a tripId
+    # Add tripId and userId
     df['tripId'] = tripId
+    df['userId'] = userId
 
     if verbose:
         print(df)
@@ -55,7 +56,7 @@ def process_plt(input_tupple, verbose=False):
 if __name__ == '__main__':
 
     # Testing a single file
-    process_plt((INPUT_FILES[0], 'test'), verbose=True)
+    process_plt((INPUT_FILES[0], 'tripId1', 'userId1'), verbose=True)
 
     # Process all the file in parallel. This takes around 22 seconds to process all 18670 and write a single file with
     # 24.876.978 rows.
@@ -63,9 +64,9 @@ if __name__ == '__main__':
     mp_input_list = []
     for filename in INPUT_FILES:
         id1 = os.path.basename(filename).split('.plt')[0]
-        id2 = filename.split('/')[3]
-        tripId = f'{id1}_{id2}'
-        mp_input_list.append((filename, tripId))
+        userId = filename.split('/')[2]
+        tripId = f'{userId}_{id1}'
+        mp_input_list.append((filename, tripId, userId))
     df_list = list(tqdm.tqdm(mp_pool.imap_unordered(process_plt, mp_input_list), total=len(mp_input_list)))
 
     # Combine all the files together,
