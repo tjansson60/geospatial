@@ -6,7 +6,8 @@ import glob
 import tqdm
 import pandas as pd
 
-OUTPUT_FILE = 'data/geolife_trajectories_1_3.parquet'
+INPUT_FILES = glob.glob('Geolife Trajectories 1.3/Data/*/Trajectory/*.plt')
+OUTPUT_FILE = 'geolife_trajectories_1_3.parquet'
 
 
 def process_plt(input_tupple, verbose=False):
@@ -54,16 +55,13 @@ def process_plt(input_tupple, verbose=False):
 if __name__ == '__main__':
 
     # Testing a single file
-    process_plt(
-        ('data/Geolife Trajectories 1.3/Data/000/Trajectory/20090704042634.plt',
-        '000_20090704042634'), verbose=True)
+    process_plt((INPUT_FILES[0], 'test'), verbose=True)
 
     # Process all the file in parallel. This takes around 22 seconds to process all 18670 and write a single file with
     # 24.876.978 rows.
     mp_pool = multiprocessing.Pool()
-    files = glob.glob('data/Geolife Trajectories 1.3/Data/*/Trajectory/*.plt')
     mp_input_list = []
-    for filename in files:
+    for filename in INPUT_FILES:
         id1 = os.path.basename(filename).split('.plt')[0]
         id2 = filename.split('/')[3]
         tripId = f'{id1}_{id2}'
