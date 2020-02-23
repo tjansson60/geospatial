@@ -1,0 +1,41 @@
+name: geospatial
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.7.3
+  - pip
+  - pip:
+      # Data manipulating
+      - pandas
+      - numpy
+      - tqdm
+      - pyarrow
+      # Plotting tools
+      - matplotlib
+      - pillow
+      - seaborn
+      # Needed for cpu stats
+      - psutil
+      - shapely # Geometric objects, predicates, and operations
+      - pyproj # Python interface to PROJ (cartographic projections and coordinate transformations library)
+      - nltk # Natural Language Processing with Python
+      - snakeviz # A web-based viewer for Python profiler output
+      - geopandas # Geographic pandas extensions
+      - descartes # Use geometric objects as matplotlib paths and patches
+      - datashader # Data visualization toolchain based on aggregating into a grid
+      - holoviews # Stop plotting your data - annotate your data and let it visualize itself.
+      - jupyterlab # The JupyterLab notebook server extension.
+      - jupyter_contrib_nbextensions # A collection of Jupyter nbextensions. 
+      - folium # Make beautiful maps with Leaflet.js & Python
+      - geojsoncontour # Convert matplotlib contour plots to geojson
+      - dexplot # Simple plotting library for both long and wide data integrated with DataFrames
+      - shap # A unified approach to explain the output of any machine learning model.
+      - lime # Local Interpretable Model-Agnostic Explanations for machine learning classifiers
+      - geocoder # Geocoder is a simple and consistent geocoding library.
+      - bpython # Fancy Interface to the Python Interpreter
+      - scikit-learn # A set of python modules for machine learning and data mining
+      - flake8 # the modular source code checker: pep8, pyflakes and co
+      - pudb # A full-screen, console-based Python debugger
+      - DateTimeRange # DateTimeRange is a Python library to handle a time range. e.g. check whether a time is within the time range, get the intersection of time ranges, truncating a time range, iterate through a time range, and so forth.
+      - pydeck  
