@@ -20,7 +20,7 @@ Download the zip file to the data folder and unzip. Run the `preprocess-geolife_
 single `data/geolife_trajectories_1_3.parquet` which is very efficient and only takes up 217 MB.
 
 The file contains the data from all the 18670 plt files and takes around 22 seconds to run in parallel on a modern CPU.
-The output contains around 24.876.978 positions. Below is a sample of the dataframe:
+The output contains around 24.876.978 positions. Below is a sample of the dataframe after the `preprocess-geolife_trajectories-data.py` script:
 
 ```
 lat         lon            datetime  altitude_meters              tripId
