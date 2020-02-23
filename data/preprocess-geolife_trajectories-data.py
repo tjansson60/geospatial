@@ -6,8 +6,10 @@ import glob
 import tqdm
 import pandas as pd
 
-INPUT_FILES = glob.glob('Geolife Trajectories 1.3/Data/*/Trajectory/*.plt')
-OUTPUT_FILE = 'geolife_trajectories_1_3.parquet'
+INPUT_FILES       = glob.glob('Geolife Trajectories 1.3/Data/*/Trajectory/*.plt')
+OUTPUT_FILE       = 'geolife_trajectories_1_3.parquet'
+OUTPUT_FILE_SMALL = 'small.parquet'
+SMALL_NUM_TRIPS   = 100
 
 
 def process_plt(input_tupple, verbose=False):
@@ -83,3 +85,9 @@ if __name__ == '__main__':
     # Gzip: 297 MB
     # Brotli: 217 MB
     df.to_parquet(OUTPUT_FILE, compression='brotli')
+
+    # Only select the X trips with most points
+    tripIds = df.groupby('tripId')['datetime'].count().sort_values(ascending=False).head(SMALL_NUM_TRIPS).index.tolist()
+    df_small = df[df.tripId.isin(tripIds)].copy()
+    print(f'Saving data to parquet format: {OUTPUT_FILE_SMALL}')
+    df_small.to_parquet(OUTPUT_FILE_SMALL, compression='brotli')
