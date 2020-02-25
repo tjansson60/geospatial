@@ -3,7 +3,7 @@
 
 print('''
 Use the ``bokeh serve`` command to run the example by executing:
-    bokeh serve bokeh-demo.py
+    bokeh serve 2-bokeh-demo.py
 at your command prompt. Then navigate to the URL
     http://localhost:5006
 in your browser.
