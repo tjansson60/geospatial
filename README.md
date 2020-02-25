@@ -6,12 +6,17 @@ This is the example notebooks on geospatial visualizations in python from the ta
 
 ## Environment
 Have a basic conda environment up and running and then 
-```
+```bash
 conda env create -n geospatial -f environment.yml
 ```
 
-```
+### Activate the environment
+```bash
 conda activate geospatial
 ```
 
+### Remove the environment
+```bash
+conda remove --name geospatial --all
+```
 
