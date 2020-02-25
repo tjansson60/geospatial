@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-'''
+print('''
 Use the ``bokeh serve`` command to run the example by executing:
-    bokeh serve 2018-11-interactive-map.py
+    bokeh serve bokeh-demo.py
 at your command prompt. Then navigate to the URL
     http://localhost:5006
 in your browser.
-'''
+''')
 
 import pandas as pd
 from pyproj import Proj, transform
