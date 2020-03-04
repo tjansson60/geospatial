@@ -5,7 +5,7 @@ This is the example notebooks on geospatial visualizations in python from the ta
 
 
 ## Environment
-Have a basic conda environment up and running and then 
+Assuming you have a basic conda environment set up (such as [miniconda](https://docs.conda.io/en/latest/miniconda.html)) you can then create the correct enviroment using:
 ```bash
 conda env create -n geospatial -f environment.yml
 ```
